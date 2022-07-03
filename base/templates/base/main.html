@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ToDo List</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                background: linear-gradient(270deg, #5e9df0 50%, #2048cd 100%);
+                font-family: 'Merriweather', serif;;
+            }
+
+            .container {
+                max-width: 550px;
+                margin: 100px auto 0 auto;
+                background-color: rgb(128, 109, 109);
+                box-shadow: 4px 4px 15px -4px rgba(0, 0, 0, 0.21);
+                border-radius: 1%;
+            }
+
+            a, p {
+                color: #e4cc7c;
+            }
+            
+            .header-bar {
+                display: flex;
+                justify-content: space-between;
+                color: rgb(61, 181, 121);
+                padding: 10px;
+                border-radius: 5px 5px 0 0;
+                background-color: rgb(128, 109, 109);
+            }
+
+            .header-bar a {
+                color: white;
+                text-decoration: none;
+                margin-bottom: 100px;
+            }
+
+            a:hover {
+                color: rgb(243, 75, 75);
+            }
+
+            .task-items-wrapper {
+                padding: 10px;
+            }
+
+            .task-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 20px 20px 5px;
+                background-color: rgb(161, 152, 152);
+                border-top: 3px solid rgb(128, 109, 109);
+            }
+
+            .task-title {
+                display: flex;
+            }
+
+            .task-title a {
+                text-decoration: none;
+                color: rgb(68, 37, 57);
+                margin-left: 10px;
+            }
+
+            .task-complete-icon {
+                height: 16px;
+                width: 16px;
+                background-color: greenyellow;
+                border-radius: 50%;
+            }
+
+            .task-incomplete-icon {
+                height: 16px;
+                width: 16px;
+                background-color: antiquewhite;
+                border-radius: 50%;
+            }
+            
+            .delete-link {
+                text-decoration: none;
+                font-weight: 900;
+                color: red;
+                font-size: 22px;
+                border: solid 1px;
+                border-radius: 10%;
+                padding: 3px 15px 3px 15px;
+            }
+
+            .delete-link:hover {
+                background-color: red;
+                color: rgb(161, 152, 152);
+            }
+
+            #search-add-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+            }
+
+            #add-link {
+                color: lightgreen;
+                text-decoration: none;
+                font-size: 18px;
+                text-shadow: 1px 1px black;
+                padding-right: 8px;
+            }
+
+            #add-link:hover {
+                text-shadow: 1px 1px rgb(12, 177, 67);
+            }
+            
+            .btn {
+                border: 1px solid black;
+                background-color: antiquewhite;
+                color: black;
+                padding: 10px;
+                font-size: 14px;
+                border-radius: 3px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            .btn:hover {
+                background-color: rgb(61, 181, 121);
+            }
+
+            input[type=text], input[type=password], textarea {
+                border: 1px solid black;
+                border-radius: 2px;
+                padding: 10px;
+                width: 63%;
+            }
+
+            label {
+                padding-top: 10px !important;
+                display: block;
+                color: rgb(226, 179, 98);
+            }
+
+            .task-complete-icon:hover {
+                background-color: rgb(243, 75, 75);
+            }
+
+            .task-incomplete-icon:hover {
+                background-color: greenyellow;
+            }
+
+            .card-body {
+                padding: 12px;
+            }
+
+            .btn-register {
+                color: rgb(226, 179, 98);
+            }
+
+            .btn-register:hover {
+                color: #47dce7;
+            }
+
+            .btn-login {
+                color: rgb(226, 179, 98);
+            }
+
+            .btn-login:hover {
+                color:#47dce7;
+            }
+
+            .footer {
+                color: rgb(226, 179, 98);
+            }
+
+            
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+    </body>
+</html>
